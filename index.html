@@ -3,13 +3,10 @@
 <head lang="ru">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="files/css/message.css">
-    <link rel="stylesheet" href="files/css/everad.css">
-    <link rel="stylesheet" href="files/css/phone.css">
-    <link href="files/css/style.css" rel="stylesheet">
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
-    </script>
+    <link href="files/css/style-min.css" rel="stylesheet">
+    <link rel="preload" href="files/img/bg-sect1.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
     <title>Купить Диалайн недорого. Цены, отзывы. Закажите Диалайн сейчас!</title>
 </head>
 <body>
@@ -29,7 +26,8 @@
         <div class="section1">
             <div class="wrapper">
                 <p class="main-title">Диалайн – двойной удар по диабету</p>
-                <p class="title-small">Средство №1 в России стабилизирующее выработку инсулина и уровень фосфора в организме</p>
+                <p class="title-small">Средство №1 в <span class="title-small title-small--city">России</span> стабилизирующее выработку инсулина и уровень фосфора в организме</p>
+                <p class="title-small title-small--country"></p>
                 <div class="section-wrap">
                     <div class="section1-left">
                         <div class="do-blocks">
@@ -82,7 +80,7 @@
 								                    <input type="hidden" name="subid" value="0">
                                     <div class="c-s" style="display: none;"><input type="hidden" name="country_code" value="RU"></div>
                                     <input class="input-form" type="text" name="name" placeholder="Ваше имя">
-                                    <input class="input-form" type="text" name="phone" placeholder="Ваш номер телефона" <input type="tel" pattern="\+\(\d{1,3}\)-\d{7,12}" title="Номер в формате: +(код страны)-номер абонента" required>
+                                    <input class="input-form" type="text" name="phone" placeholder="Ваш номер телефона" pattern="\+\(\d{1,3}\)-\d{7,12}" title="Номер в формате: +(код страны)-номер абонента" required>
                                     <button class="submit-form" type="submit">Получить<br>Диалайн</button>
                                 </form>
                             </div>
@@ -665,6 +663,104 @@
     <div class="mouse">
         <div class="line_top mouse_moved"></div>
     </div>
+    <section class="modal">
+        <div class="modal-bg">
+            <h3 class="modal-title">Получите купон на 300 рублей</h3>
+            <p class="modal-text">Перед тем как вы уйдете получите купон на 300  рублей на ваш первый заказ!</p>
+            <div class="modal-form form-left--all">
+                    <form method="post" action="" class="orderFormWrapper">
+                        <input type="hidden" name="subid" value="0">
+                        <div class="c-s" style="display: none;"><input type="hidden" name="country_code" value="RU"></div>
+                        <input class="input-form input-form--all" type="text" name="name" placeholder="Ваше имя">
+                        <input class="input-form input-form--all" type="text" name="phone" placeholder="Ваш номер телефона" pattern="\+\(\d{1,3}\)-\d{7,12}" title="Номер в формате: +(код страны)-номер абонента" required>
+                        <button class="submit-form submit-form--all" type="submit">Получить
+                            <br>купон</button>
+                    </form>
+            </div>
+        </div>
+        <button type="button" class="modal-btn close-mouse"></button>
+    </section>
+    <script>
+        $(document).mouseleave(function(){$('.modal').show();});
+    </script>
+    <script type="text/javascript">
+     window.onload = function () {
+        ymaps.ready(function() {
+            var country = ymaps.geolocation.country;
+            var city = ymaps.geolocation.city;
+            console.log(country);
+            console.log(city);
+              console.log(toCase(city, "п"));
+              city=toCase(city, "п");
+            if (ymaps.geolocation.country !== 'Россия') {
+                $('.title-small--country').html('Страны СНГ');
+            }
+            else {
+                $('.title-small--city').html(city);
+            }
+          });
+        };
+        function toCase(str, choice) {
+            var strPub = { // правила для окончаний
+                "а": ["ы", "е", "у", "ой", "е"],
+                "(ш/ж/к/ч)а": ["%и", "%е", "%у", "%ой", "%е"],
+                "б/в/м/г/д/л/ж/з/к/н/п/т/ф/ч/ц/щ/р/х": ["%а", "%у", "%а", "%ом", "%е"],
+                "и": ["ей", "ям", "%", "ями", "ях"],
+                "ый": ["ого", "ому", "%", "ым", "ом"],
+                "й": ["я", "ю", "я", "ем", "е"],
+                "о": ["а", "у", "%", "ом", "е"],
+                "с/ш": ["%а", "%у", "%", "%ом", "%е"],
+                "ы": ["ов", "ам", "%", "ами", "ах"],
+                "ь": ["я", "ю", "я", "ем", "е"],
+                "уль": ["ули", "уле", "улю", "улей", "уле"],
+                "(ч/ш/д/т)ь": ["%и", "%и", "%ь", "%ью", "%и"],
+                "я": ["и", "е", "ю", "ей", "е"]
+            },
+            cases = { // номера для падежей, не считая Именительный
+                "р": 0,
+                "д": 1,
+                "в": 2,
+                "т": 3,
+                "п": 4
+            },  exs = { // исключения, сколько символов забирать с конца
+                "ц": 2,
+                "ок": 2
+            }, lastIndex,reformedStr,forLong,splitted,groupped,forPseudo;
+
+            for(var i in strPub){
+                if(i.length > 1 && str.slice(-i.length) == i){ // для окончаний, длиной >1
+                    lastIndex = i;
+                    reformedStr = str.slice(0, -lastIndex.length);
+                    break;
+                }
+                else if(/[\(\)]+/g.test(i)){ // фича: группировка окончаний
+                    i.replace(/\(([^\(\)]+)\)([^\(\)]+)?/g, function(a, b, c){
+                        splitted = b.split("/");
+                        for(var o = 0; o < splitted.length; o++){
+                            groupped = splitted[o] + c;
+                            strPub[groupped] = strPub[i];
+                            if(str.slice(-groupped.length) == groupped){
+                                for(var x = 0, eachSplited = strPub[groupped];x < eachSplited.length; x++){
+                                    eachSplited[x] = eachSplited[x].replace("%", splitted[o]);
+                                }
+                                reformedStr = str.slice(0, -groupped.length);
+                                forPseudo = groupped;
+                            }
+                        }
+                    })
+                }
+                else{ // дефолт
+                    lastIndex = str.slice(-1);
+                    reformedStr = str.slice(0, -(forPseudo || lastIndex).length);
+                }
+                if(/\//.test(i) && !(/[\(\)]+/g.test(i)) && new RegExp(lastIndex).test(i))forLong = i; // группированные окончания, разделающиеся слешем
+                for(var o in exs){ // поиск исключений
+                    if(str.slice(-o.length) == o)reformedStr = str.slice(0, -exs[o]);
+                }
+            }
+            return reformedStr + strPub[(forPseudo || forLong || lastIndex)][cases[choice]].replace("%", lastIndex)
+        };
+  </script>
     <script src="files/js/index.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {

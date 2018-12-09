@@ -71,7 +71,8 @@ header{
 }
 .header__logo{
     float: left;
-    background: url("../img/logo.png") no-repeat 0 0;
+    background-image: url(../img/sprite.png);
+    background-position: -121px 0px;
     width: 217px;
     height: 69px;
 }
@@ -110,18 +111,14 @@ header{
 }
 .header__block:before{
     content: " ";
-    background: url("../img/icon-header.png") no-repeat 0 0;
+    background-image: url(../img/sprite.png);
+    background-position: -121px -69px;
     width: 54px;
     height: 44px;
     position: absolute;
     top:3px;
     left: 0;
 }
-
-
-
-
-
 
 /* section1 */
 .section1{
@@ -143,11 +140,11 @@ header{
     margin-right: -500px;
     z-index: 15;
 }
-.rub1 {
+.rub1{
     margin: 3px 15px 0;
     font-size: 12px;
 }
-.rub1-all {
+.rub1-all{
     font-size: 12px;
 }
 .main-title{
@@ -165,6 +162,9 @@ header{
     line-height: 32px;
     text-align: center;
     text-shadow: 3px 3px 8px rgba(81, 83, 84, 0.6);
+}
+.title-small--country{
+    text-align: right;
 }
 .section-wrap{
     margin-top: 50px;
@@ -196,9 +196,10 @@ header{
 }
 .section1-left .do:before{
     content: " ";
-    background: url("../img/icon-do.png") no-repeat 0 0;
-    width: 46px;
-    height: 46px;
+    background-image: url(../img/sprite.png);
+    background-position: -215px -69px;
+    width: 34px;
+    height: 34px;
     position: absolute;
     top: 57%;
     margin-top: -24px;
@@ -243,7 +244,8 @@ header{
     padding: 12px 6px 0 0;
     position: relative;
     z-index: 1;
-    background: url("../img/sale-bg.png") no-repeat center top;
+    background-image: url(../img/sprite.png);
+    background-position: 0px -143px;
     width: 104px;
     height: 123px;
     text-align: center;
@@ -263,16 +265,15 @@ header{
     line-height: 36px;
 }
 .sale-product-img{
-        position: absolute;
+    position: absolute;
     top: 17px;
     left: -51px;
     z-index: -1;
-    background: url(../img/product.png) no-repeat 0 0;
+    background: url("../img/product.png") no-repeat 0 0;
     width: 324px;
     height: 383px;
     background-size: cover;
 }
-
 
 .section1-right{
     float: right;
@@ -359,7 +360,8 @@ header{
 }
 .form-main:after{
     content: ' ';
-    background: url("../img/arrow.png") no-repeat 0 0;
+    background-image: url(../img/sprite.png);
+    background-position: -290px -143px;
     width: 33px;
     height: 53px;
     position: absolute;
@@ -445,9 +447,6 @@ select{
 }
 /*end section1*/
 
-
-
-
 /* section2 */
 .section2{
     padding-top: 28px;
@@ -478,9 +477,6 @@ select{
 }
 .reasons-block:before{
     content: " ";
-    background: url("http://demo.localtime-idea.com/demo_landings/dianot/dianot_ld6/img/reasons-img.png") no-repeat;
-    width: 93px;
-    height: 93px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -488,28 +484,46 @@ select{
 }
 .reasons-block--1.reasons-block:before{
     /*background-position: 0 0;*/
-    background: url("../img/reasons-img-1.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: 0px -266px;
+    width: 93px;
+    height: 93px;
 }
 .reasons-block--2.reasons-block:before{
     /*background-position: -100px 0;*/
     /*background-position: -300px 0;*/
-    background: url("../img/reasons-img-2.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: -93px -266px;
+    width: 93px;
+    height: 93px;
 }
 .reasons-block--3.reasons-block:before{
     /*background-position: -200px 0;*/
-    background: url("../img/reasons-img-3.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: -338px -93px;
+    width: 93px;
+    height: 93px;
 }
 .reasons-block--4.reasons-block:before{
     /*background-position: -300px 0;*/
-    background: url("../img/reasons-img-4.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: -338px 0px;
+    width: 93px;
+    height: 93px;
 }
 .reasons-block--5.reasons-block:before{
     /*background-position: -400px 0;*/
-    background: url("../img/reasons-img-5.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: -197px -143px;
+    width: 93px;
+    height: 93px;
 }
 .reasons-block--6.reasons-block:before{
     /*background-position: -400px 0;*/
-    background: url("../img/reasons-img-6.png") 0 0 no-repeat;
+    background-image: url(../img/sprite.png);
+    background-position: -104px -143px;
+    width: 93px;
+    height: 93px;
 }
 
 .reasons-title{
@@ -523,7 +537,6 @@ select{
     line-height: 24px;
 }
 /*end section2*/
-
 
 
 
@@ -550,9 +563,19 @@ select{
 .complications-text{
     font-size: 24px;
     line-height: 26px;
-    background: url("../img/complications-danger.png") no-repeat left top;
     padding: 15px 0 30px 60px;
     min-height: 36px;
+    position: relative;
+}
+.complications-text::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/sprite.png);
+  background-position: -175px -69px;
+  width: 40px;
+  height: 36px;
+  top: 0;
+  left: 0;
 }
 /*end section3*/
 
@@ -756,12 +779,25 @@ select{
     margin-bottom: 50px;
 }
 .additional__item{
-    background: url("../img/aditional.png") top center no-repeat;
     padding-top: 73px;
     display: inline-block;
     text-align: center;
     width: 210px;
-    margin: 20px 12px
+    margin: 20px 12px;
+    position: relative;
+}
+
+.additional__item::before {
+    content: "";
+    position: absolute;
+    background-image: url(../img/sprite.png);
+    background-position: -338px -186px;
+    width: 73px;
+    height: 64px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 .additional__item-info{
     font-size: 18px;
@@ -873,7 +909,8 @@ select{
     padding: 12px 6px 0 0;
     position: relative;
     z-index: 1;
-    background: url("../img/sale-bg--all.png") no-repeat center top;
+    background-image: url(../img/sprite.png);
+    background-position: 0px 0px;
     width: 121px;
     height: 143px;
     text-align: center;
@@ -1002,7 +1039,8 @@ select{
 }
 .form--all:after{
     content: ' ';
-    background: url("../img/arrow2.png") no-repeat 0 0;
+    background-image: url(../img/sprite.png);
+    background-position: -186px -266px;
     width: 30px;
     height: 49px;
     position: absolute;
@@ -1447,7 +1485,8 @@ select{
 .close-img, .close-phone, .close-mouse {
     content: " ";
     position: absolute;
-    background: url("../img/close.png") no-repeat 0 0;
+    background-image: url(../img/sprite.png);
+    background-position: -249px -69px;
     width: 32px;
     height: 32px;
     top: -6px;
@@ -1468,8 +1507,59 @@ select{
 }
 /*end popup*/
 
+/* popup "заявка принята" */
+.modal {
+ position: absolute;
+ z-index: 20;
+ left: 50%;
+ top: 50%;
+ -ms-transform: translate(-50%, -50%);
+ -webkit-transform: translateX(-50%, -50%);
+ transform: translate(-50%, -50%);
+ background-color: #FFFFFF;
+ background-image: url("../img/bg-small-form-top.png");
+ background-repeat: repeat;
+ border-radius: 10px;
+ width: 50%;
+ min-height: 362px;
+ box-sizing: border-box;
+ padding: 4px;
+ color: #164553;
+ font-size: 20px;
+ line-height: 26px;
+ font-style: italic;
+ text-align: center;
+ display: none;
+ z-index: 1000;
+}
 
+.modal-bg {
+  padding: 20px 30px;
+  background: #EEFAF7;
+  min-height: inherit;
+}
 
+.modal-title {
+ color: #154755;
+ font-size: 30px;
+ line-height: 36px;
+ padding: 20px;
+ font-style: normal;
+ font-weight: 700;
+}
+
+.modal-form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  float: none;
+}
+
+.modal-btn {
+  background-color: transparent;
+  border: none;
+}
+/*конец "заявка принята" */
 
 .sale--mob{display: none;}
 
@@ -1649,7 +1739,7 @@ select{
         margin-bottom: 21px;
     }
     .submit-form {
-        
+
         height: 110px;
         font-size: 30px;
         line-height: 30px;
@@ -1852,7 +1942,7 @@ select{
     .section1 {
         padding-top: 90px;
         padding-bottom: 55px;
-       
+
         background-size: cover;
     }
     .main-title {
@@ -1904,14 +1994,10 @@ select{
     }
 
     .reasons-block:before {
-        background: url("http://demo.localtime-idea.com/demo_landings/dianot/dianot_ld6/img/reasons-img-480.png") no-repeat;
-        /*width: 130px;*/
-        /*height: 129px;*/
-        width: 125px;
-        height: 125px;
+      zoom:1.3;
+   -moz-transform:scale(1.3);
+   -moz-transform-origin: 0 0;
         left: 47%;
-        -webkit-background-size: cover !important;
-        background-size: cover !important;
         /*margin-left: -65px;*/
     }
     .reasons-block--2.reasons-block:before {
@@ -2050,13 +2136,13 @@ select{
         padding-top: 1px;
         height: 260px;
     }
-   
+
     .slide-img {
         height: 160px;
 		width: 100%;
 		text-align: center;
     }
-   
+
     .slide-img--1{
         background: url("http://demo.localtime-idea.com/demo_landings/dianot/dianot_ld6/img/slide-img1-480.png") no-repeat center top;
     }
@@ -2302,7 +2388,7 @@ content: " ";
     background-size: cover;
     }
 	.sale--mob:before {
-    
+
 }
     .section1-right, .form-wrapper {
         width: 300px;
@@ -2423,9 +2509,7 @@ content: " ";
         line-height: 24px;
     }
     .reasons-block:before {
-        background: url("http://demo.localtime-idea.com/demo_landings/dianot/dianot_ld6/img/reasons-img.png") no-repeat;
-        /*width: 100px;*/
-        /*height: 93px;*/
+
         margin-left: -50px;
     }
     .reasons-block--2.reasons-block:before {
@@ -2459,6 +2543,10 @@ content: " ";
         background: url("http://demo.localtime-idea.com/demo_landings/dianot/dianot_ld6/img/complications-danger-240.png") no-repeat left top;
         padding: 9px 0 25px 48px;
         min-height: 27px;
+    }
+
+    .complications-text::before {
+      background-image: none;
     }
     .text-bg1 {
         font-size: 24px;
@@ -2637,7 +2725,7 @@ content: " ";
     .section1 {
         padding-top: 85px;
         padding-bottom: 40px;
-       
+
         background-size: cover;
     }
     .section-wrap {
@@ -2922,7 +3010,7 @@ content: " ";
         padding-bottom: 62px;
     }
     .slide-img img {
-        
+
     }
     .slide-img {
         height: 160px;

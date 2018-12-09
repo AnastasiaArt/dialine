@@ -235,7 +235,7 @@ $(document).ready(function () {
         localStorage.setItem('maxGoods', maxGoods);
       }
     }, 15000);
-
+    // Поиск параметра callback
     function parseUrl () {
       var urlArr = document.getElementsByTagName('a');
       $.urlParam = function(name){
@@ -258,6 +258,13 @@ $(document).ready(function () {
     };
 
     parseUrl();
+
+     //уаление попапа
+     function  del() {
+       var modal=document.querySelector('.modal');
+       $('.modal').remove();
+     };
+     document.querySelector('.modal-btn').onclick = del;
 
     //Добавить синюю трубку телефона
     function bluePhone() {
@@ -328,7 +335,6 @@ $(document).ready(function () {
         };
         checkBrowser();
     };
-
     //Стили для браузеров конец
     //Функция проверки и включения/выключения функцый
     function check() {
